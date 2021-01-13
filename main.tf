@@ -112,7 +112,7 @@ resource "aws_eip" "hashicat" {
   tags = {
      department = "devops"
   }
-  }
+  
 }
 
 resource "aws_eip_association" "hashicat" {
