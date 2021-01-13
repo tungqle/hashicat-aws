@@ -109,10 +109,8 @@ data "aws_ami" "ubuntu" {
 resource "aws_eip" "hashicat" {
   instance = aws_instance.hashicat.id
   vpc      = true
-
   }
   
-
 
 resource "aws_eip_association" "hashicat" {
   instance_id   = aws_instance.hashicat.id
