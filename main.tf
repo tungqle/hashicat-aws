@@ -112,7 +112,7 @@ resource "aws_eip" "hashicat" {
 
   }
   
-}
+
 
 resource "aws_eip_association" "hashicat" {
   instance_id   = aws_instance.hashicat.id
