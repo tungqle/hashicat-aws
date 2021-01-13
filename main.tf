@@ -10,6 +10,7 @@ resource "aws_vpc" "hashicat" {
   tags = {
     name = "${var.prefix}-vpc-${var.region}"
     environment = "Production"
+   
   }
 }
 
@@ -108,6 +109,10 @@ data "aws_ami" "ubuntu" {
 resource "aws_eip" "hashicat" {
   instance = aws_instance.hashicat.id
   vpc      = true
+  tags = {
+     department = "devops"
+  }
+  }
 }
 
 resource "aws_eip_association" "hashicat" {
