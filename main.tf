@@ -109,8 +109,7 @@ data "aws_ami" "ubuntu" {
 resource "aws_eip" "hashicat" {
   instance = aws_instance.hashicat.id
   vpc      = true
-  tags = {
-     department = "devops"
+
   }
   
 }
@@ -130,6 +129,8 @@ resource "aws_instance" "hashicat" {
 
   tags = {
     Name = "${var.prefix}-hashicat-instance"
+    Department = "devops"
+    Billable = "true"
   }
 }
 
